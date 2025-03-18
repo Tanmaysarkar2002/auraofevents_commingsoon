@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Of Events|Coming Soon</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+        .inter {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background: linear-gradient(to bottom, #ffffff 0%, #444444 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grad {
+            background: #131A22;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="absolute top-0 left-0 right-0 m-4 z-10 hidden" id="errorAlert">
+        <div class="flex items-center p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
+            role="alert">
+            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 20 20">
+                <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+                You're already on the waitlist!
+            </div>
+        </div>
+    </div>
+    <div class="absolute top-0 left-0 right-0 m-4 z-10 hidden" id="alert">
+        <div class="flex items-center p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            role="alert">
+            <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor" viewBox="0 0 20 20">
+                <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <span class="sr-only">Info</span>
+            <div>
+                <span class="font-medium">Congratulations!</span> You've been added to the waitlist.
+            </div>
+        </div>
+    </div>
+    <div class="relative h-[100vh] grad flex justify-center items-center ">
+        <div>
+            <img src="./Transparent.png" class="mx-auto mb-2" width="300px" alt="">
+            <h1 class="text-stone-400 text-center md:text-8xl lg:text-9xl text-5xl inter font-bold pb-4">Coming Soon
+            </h1>
+            <p class="mt-0 px-4 text-gray-400 text-center text-sm md:text-md lg:text-xl inter pb-2">Join our waitlist
+                here, we'll contact you
+                as
+                soon as possible!</p>
+            <div class=" mx-auto w-full px-8 md:px-0 max-w-sm min-w-[200px]">
+                <div class="relative">
+                    <input type="email" name="email" id="email"
+                        class="p-4 w-full bg-transparent placeholder:text-slate-400 text-slate-400 text-sm border border-stone-500 rounded-md pl-3 pr-16 py-2 transition duration-300 ease focus:outline-none shadow-sm focus:shadow"
+                        placeholder="Email Address" />
+                    <input name="_formsubmit_id" type="text" style="display:none">
+                    <button type="submit" id="joinButton"
+                        class="disabled absolute right-1 top-1 rounded bg-[#00CDB9] py-1 px-2.5 border border-transparent text-center text-sm text-black transition-all shadow-sm hover:shadow focus:bg-[#a2f5ec] focus:shadow-none active:bg-[#00CDB9] hover:bg-[#a2f5ec] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button">
+                        Join Us
+                    </button>
+                </div>
+            </div>
+            <div id="potrait" class="hidden">
+                <h2 class="text-center text-white inter mt-4 mb-0">Follow us on</h2>
+                <div class="flex justify-around mt-2 px-24 md:px-0 w-full md:w-1/2 mx-auto">
+                    <a class="mx-1.5 transition-colors duration-300 transform hover:scale-110"
+                        href="https://www.instagram.com/auraofevents_/" target='blank_'>
+                        <svg class="w-8 h-8 fill-stone-500 hover:fill-[#00CDB9] transition-all ease-in duration-100"
+                            x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" />
+                            <path
+                                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" />
+                        </svg>
+                    </a>
+                    <a class="mx-1.5 transition-colors duration-300 transform hover:scale-110"
+                        href="https://x.com/auraofevents" target='blank_'>
+                        <svg class="w-8 h-8 fill-stone-500 hover:fill-[#00CDB9] transition-all ease-in duration-100"
+                            x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.7828 3.91825C20.1313 3.83565 20.3743 3.75444 20.5734 3.66915C20.8524 3.54961 21.0837 3.40641 21.4492 3.16524C21.7563 2.96255 22.1499 2.9449 22.4739 3.11928C22.7979 3.29366 23 3.6319 23 3.99986C23 5.08079 22.8653 5.96673 22.5535 6.7464C22.2911 7.40221 21.9225 7.93487 21.4816 8.41968C21.2954 11.7828 20.3219 14.4239 18.8336 16.4248C17.291 18.4987 15.2386 19.8268 13.0751 20.5706C10.9179 21.3121 8.63863 21.4778 6.5967 21.2267C4.56816 20.9773 2.69304 20.3057 1.38605 19.2892C1.02813 19.0108 0.902313 18.5264 1.07951 18.109C1.25671 17.6916 1.69256 17.4457 2.14144 17.5099C3.42741 17.6936 4.6653 17.4012 5.6832 16.9832C5.48282 16.8742 5.29389 16.7562 5.11828 16.6346C4.19075 15.9925 3.4424 15.1208 3.10557 14.4471C2.96618 14.1684 2.96474 13.8405 3.10168 13.5606C3.17232 13.4161 3.27562 13.293 3.40104 13.1991C2.04677 12.0814 1.49999 10.5355 1.49999 9.49986C1.49999 9.19192 1.64187 8.90115 1.88459 8.71165C1.98665 8.63197 2.10175 8.57392 2.22308 8.53896C2.12174 8.24222 2.0431 7.94241 1.98316 7.65216C1.71739 6.3653 1.74098 4.91284 2.02985 3.75733C2.1287 3.36191 2.45764 3.06606 2.86129 3.00952C3.26493 2.95299 3.6625 3.14709 3.86618 3.50014C4.94369 5.36782 6.93116 6.50943 8.78086 7.18568C9.6505 7.50362 10.4559 7.70622 11.0596 7.83078C11.1899 6.61019 11.5307 5.6036 12.0538 4.80411C12.7439 3.74932 13.7064 3.12525 14.74 2.84698C16.5227 2.36708 18.5008 2.91382 19.7828 3.91825ZM10.7484 9.80845C10.0633 9.67087 9.12171 9.43976 8.09412 9.06408C6.7369 8.56789 5.16088 7.79418 3.84072 6.59571C3.86435 6.81625 3.89789 7.03492 3.94183 7.24766C4.16308 8.31899 4.5742 8.91899 4.94721 9.10549C5.40342 9.3336 5.61484 9.8685 5.43787 10.3469C5.19827 10.9946 4.56809 11.0477 3.99551 10.9046C4.45603 11.595 5.28377 12.2834 6.66439 12.5135C7.14057 12.5929 7.49208 13.0011 7.49986 13.4838C7.50765 13.9665 7.16949 14.3858 6.69611 14.4805L5.82565 14.6546C5.95881 14.7703 6.103 14.8838 6.2567 14.9902C6.95362 15.4727 7.65336 15.6808 8.25746 15.5298C8.70991 15.4167 9.18047 15.6313 9.39163 16.0472C9.60278 16.463 9.49846 16.9696 9.14018 17.2681C8.49626 17.8041 7.74425 18.2342 6.99057 18.5911C6.63675 18.7587 6.24134 18.9241 5.8119 19.0697C6.14218 19.1402 6.48586 19.198 6.84078 19.2417C8.61136 19.4594 10.5821 19.3126 12.4249 18.6792C14.2614 18.0479 15.9589 16.9385 17.2289 15.2312C18.497 13.5262 19.382 11.1667 19.5007 7.96291C19.51 7.71067 19.6144 7.47129 19.7929 7.29281C20.2425 6.84316 20.6141 6.32777 20.7969 5.7143C20.477 5.81403 20.1168 5.90035 19.6878 5.98237C19.3623 6.04459 19.0272 5.94156 18.7929 5.70727C18.0284 4.94274 16.5164 4.43998 15.2599 4.77822C14.6686 4.93741 14.1311 5.28203 13.7274 5.89906C13.3153 6.52904 13 7.51045 13 8.9999C13 9.28288 12.8801 9.5526 12.6701 9.74221C12.1721 10.1917 11.334 9.92603 10.7484 9.80845Z" />
+                        </svg>
+                    </a>
+                    <a class="mx-1.5 transition-colors duration-300 transform hover:scale-110"
+                        href="https://www.facebook.com/auraofevents" target='blank_'>
+                        <svg class="w-8 h-8 fill-stone-500 hover:fill-[#00CDB9] transition-all ease-in duration-100"
+                            x="0px" y="0px" width="30" height="30" viewBox="-5 0 20 20" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+                                <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)">
+                                    <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <path
+                                            d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
+                                            id="facebook-[#176]">
+
+                                        </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+            <div class="absolute top-50 left-0">
+                <div id="landscape"
+                    class="flex flex-col gap-12 justify-around mt-2 px-24 md:px-0 w-full md:w-1/2 mx-auto">
+                    <a class="mx-1.5 transition-colors duration-300 transform hover:scale-110"
+                        href="https://www.instagram.com/auraofevents_/" target='blank_'>
+                        <svg class="w-8 h-8 fill-stone-500 hover:fill-[#00CDB9] transition-all ease-in duration-100"
+                            x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" />
+                            <path
+                                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" />
+                        </svg>
+                    </a>
+                    <a class="mx-1.5 transition-colors duration-300 transform hover:scale-110"
+                        href="https://x.com/auraofevents" target='blank_'>
+                        <svg class="w-8 h-8 fill-stone-500 hover:fill-[#00CDB9] transition-all ease-in duration-100"
+                            x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M19.7828 3.91825C20.1313 3.83565 20.3743 3.75444 20.5734 3.66915C20.8524 3.54961 21.0837 3.40641 21.4492 3.16524C21.7563 2.96255 22.1499 2.9449 22.4739 3.11928C22.7979 3.29366 23 3.6319 23 3.99986C23 5.08079 22.8653 5.96673 22.5535 6.7464C22.2911 7.40221 21.9225 7.93487 21.4816 8.41968C21.2954 11.7828 20.3219 14.4239 18.8336 16.4248C17.291 18.4987 15.2386 19.8268 13.0751 20.5706C10.9179 21.3121 8.63863 21.4778 6.5967 21.2267C4.56816 20.9773 2.69304 20.3057 1.38605 19.2892C1.02813 19.0108 0.902313 18.5264 1.07951 18.109C1.25671 17.6916 1.69256 17.4457 2.14144 17.5099C3.42741 17.6936 4.6653 17.4012 5.6832 16.9832C5.48282 16.8742 5.29389 16.7562 5.11828 16.6346C4.19075 15.9925 3.4424 15.1208 3.10557 14.4471C2.96618 14.1684 2.96474 13.8405 3.10168 13.5606C3.17232 13.4161 3.27562 13.293 3.40104 13.1991C2.04677 12.0814 1.49999 10.5355 1.49999 9.49986C1.49999 9.19192 1.64187 8.90115 1.88459 8.71165C1.98665 8.63197 2.10175 8.57392 2.22308 8.53896C2.12174 8.24222 2.0431 7.94241 1.98316 7.65216C1.71739 6.3653 1.74098 4.91284 2.02985 3.75733C2.1287 3.36191 2.45764 3.06606 2.86129 3.00952C3.26493 2.95299 3.6625 3.14709 3.86618 3.50014C4.94369 5.36782 6.93116 6.50943 8.78086 7.18568C9.6505 7.50362 10.4559 7.70622 11.0596 7.83078C11.1899 6.61019 11.5307 5.6036 12.0538 4.80411C12.7439 3.74932 13.7064 3.12525 14.74 2.84698C16.5227 2.36708 18.5008 2.91382 19.7828 3.91825ZM10.7484 9.80845C10.0633 9.67087 9.12171 9.43976 8.09412 9.06408C6.7369 8.56789 5.16088 7.79418 3.84072 6.59571C3.86435 6.81625 3.89789 7.03492 3.94183 7.24766C4.16308 8.31899 4.5742 8.91899 4.94721 9.10549C5.40342 9.3336 5.61484 9.8685 5.43787 10.3469C5.19827 10.9946 4.56809 11.0477 3.99551 10.9046C4.45603 11.595 5.28377 12.2834 6.66439 12.5135C7.14057 12.5929 7.49208 13.0011 7.49986 13.4838C7.50765 13.9665 7.16949 14.3858 6.69611 14.4805L5.82565 14.6546C5.95881 14.7703 6.103 14.8838 6.2567 14.9902C6.95362 15.4727 7.65336 15.6808 8.25746 15.5298C8.70991 15.4167 9.18047 15.6313 9.39163 16.0472C9.60278 16.463 9.49846 16.9696 9.14018 17.2681C8.49626 17.8041 7.74425 18.2342 6.99057 18.5911C6.63675 18.7587 6.24134 18.9241 5.8119 19.0697C6.14218 19.1402 6.48586 19.198 6.84078 19.2417C8.61136 19.4594 10.5821 19.3126 12.4249 18.6792C14.2614 18.0479 15.9589 16.9385 17.2289 15.2312C18.497 13.5262 19.382 11.1667 19.5007 7.96291C19.51 7.71067 19.6144 7.47129 19.7929 7.29281C20.2425 6.84316 20.6141 6.32777 20.7969 5.7143C20.477 5.81403 20.1168 5.90035 19.6878 5.98237C19.3623 6.04459 19.0272 5.94156 18.7929 5.70727C18.0284 4.94274 16.5164 4.43998 15.2599 4.77822C14.6686 4.93741 14.1311 5.28203 13.7274 5.89906C13.3153 6.52904 13 7.51045 13 8.9999C13 9.28288 12.8801 9.5526 12.6701 9.74221C12.1721 10.1917 11.334 9.92603 10.7484 9.80845Z" />
+                        </svg>
+                    </a>
+                    <a class="mx-1.5 transition-colors duration-300 transform hover:scale-110"
+                        href="https://www.facebook.com/auraofevents" target='blank_'>
+                        <svg class="w-8 h-8 fill-stone-500 hover:fill-[#00CDB9] transition-all ease-in duration-100"
+                            x="0px" y="0px" width="30" height="30" viewBox="-5 0 20 20" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+                                <g id="Dribbble-Light-Preview" transform="translate(-385.000000, -7399.000000)">
+                                    <g id="icons" transform="translate(56.000000, 160.000000)">
+                                        <path
+                                            d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
+                                            id="facebook-[#176]">
+
+                                        </path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            let landscape = document.getElementById("landscape");
+            let joinButton = document.getElementById("joinButton");
+            let potrait = document.getElementById("potrait");
+            let email = document.getElementById("email")
+            let alert = document.getElementById("alert")
+            let errorAlert = document.getElementById("errorAlert")
+
+            function updateView() {
+                if (window.innerWidth > 800) {
+                    landscape.classList.remove("hidden");
+                    potrait.classList.add("hidden");
+                } else {
+                    landscape.classList.add("hidden");
+                    potrait.classList.remove("hidden");
+                }
+            }
+            updateView()
+            window.addEventListener("resize", updateView)
+            let emailValidate = (mail) => {
+                let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (regex.test(mail)) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+
+            email.addEventListener('input', () => {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailPattern.test(email.value)) {
+                    joinButton.disabled = false;
+                    joinButton.classList.remove('opacity-50', 'pointer-events-none');
+                } else {
+                    joinButton.disabled = true;
+                    joinButton.classList.add('opacity-50', 'pointer-events-none');
+                }
+            });
+
+            joinButton.disabled = true;
+            joinButton.classList.add('opacity-50', 'pointer-events-none');
+
+            joinButton.addEventListener("click", async (e) => {
+                e.preventDefault();
+                try {
+                    const res = await fetch("https://qa.auraofevents.com/waitlist/join/", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                        },
+                        body: JSON.stringify({
+                            "email": email.value
+                        })
+                    })
+                    if (res.ok) {
+                        alert.classList.remove("hidden")
+                        setTimeout(() => {
+                            alert.classList.add("hidden")
+                        }, 2000)
+                    }
+                    else {
+                        errorAlert.classList.remove("hidden")
+                        setTimeout(() => {
+                            errorAlert.classList.add("hidden")
+                        }, 2000)
+                    }
+                }
+                catch (e) {
+                    console.log(e)
+                    errorAlert.classList.remove("hidden")
+                    setTimeout(() => {
+                        errorAlert.classList.add("hidden")
+                    }, 2000)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
